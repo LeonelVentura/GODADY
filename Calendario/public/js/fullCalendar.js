@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     editable: true,
     events: '../servidor/fullCalendar/eventos2.php',
-    initialDate: '2024-07-13'
+    initialDate: '2024-08-13'
     });
 
     calendar.render();
