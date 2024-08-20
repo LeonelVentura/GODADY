@@ -1,0 +1,179 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5; /* Fondo claro para mejor contraste */
+}
+
+.return-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem; 
+    color: #023b48; 
+    transition: transform 0.2s;
+}
+
+.return-icon:hover {
+    transform: scale(1.1); 
+}
+
+.login {
+    border: 1px solid black;
+    width: 550px;
+    height: 600px;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/c/c6/Universidad_Nacional_Federico_Villarreal%2C_Lima.jpg);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative; /* Para que el contenido se adapte bien */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(40%);
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+.titlelog {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.label, .input {
+    width: 100%;
+}
+
+label {
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+
+input {
+    background: rgba(255, 255, 255, 0.3);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    padding: 0px 20px;
+    border: none;
+    margin-bottom: 20px;
+    color: white;
+}
+
+button, .boton {
+    background: rgb(45, 126, 231); /* Color azul */
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: none;
+    margin: 10px 0;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    color: white; /* Asegura que el texto sea blanco */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%; /* Ajuste del ancho */
+}
+
+button:hover, .btn:hover {
+    background: rgb(35, 96, 171); /* Color azul más oscuro */
+}
+
+.crearcuenta {
+    text-align: center;
+    color: wheat;
+}
+
+.password-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    flex: 1;
+    padding-right: 30px; /* Ajuste del padding para evitar solapamientos */
+}
+
+.view {
+    position: absolute;
+    right: 10px; /* Ajuste según sea necesario */
+    cursor: pointer;
+}
+
+.fas.fa-lock {
+    margin-right: 10px; /* Ajuste según sea necesario */
+}
+
+.password {
+    margin-right: 10px; /* Ajuste según sea necesario */
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.text-center a {
+    display: block;
+    color: wheat;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.text-center a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    background: rgb(45, 126, 231); /* Color azul */
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: none;
+    margin: 20px 0;
+    color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    width: 100%; /* Ajuste del ancho */
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: rgb(35, 96, 171); /* Color azul más oscuro */
+}
