@@ -9,7 +9,7 @@ if(!$conex) {
 
 
 $por_pagina=10;
-if(isset($_GET['pagina']))
+if(isset($_GET['pagina']) && $_GET['pagina'] > 0)
 $pagina=$_GET['pagina'];
 else 
 {
@@ -20,7 +20,7 @@ $empieza=($pagina-1) * $por_pagina;
 
 
 // Obtener solicitudes
-$sql = "SELECT * FROM formulario WHERE estado = 'pendiente'LIMIT $empieza,$por_pagina " ;
+$sql = "SELECT * FROM formulario WHERE estado = 'pendiente' LIMIT $empieza, $por_pagina" ;
 $result = $conex->query($sql);
 
 ?>
