@@ -8,14 +8,14 @@ if(!$conex) {
 }
 
 
-$por_pagina=10;
-if(isset($_GET['pagina']) && $_GET['pagina'] > 0)
-$pagina=$_GET['pagina'];
-else 
-{
+  $por_pagina=10;
+  if(isset($_GET['pagina']) && $_GET['pagina'] > 0)
+  $pagina=$_GET['pagina'];
+  else 
+  {
     $pagina=1;
-}
-$empieza=($pagina-1) * $por_pagina;
+  }
+    $empieza=($pagina-1) * $por_pagina;
 
 
 
