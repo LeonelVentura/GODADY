@@ -1,0 +1,14 @@
+.swal2-confirm {     
+    background-color:  #B22222 !important; /* Cambiar de color */
+    color: white !important;
+    }
+.swal2-toast {
+
+        background: #f8f9fa !important; /* Fondo de la notificación */
+        color: #333 !important; /* Color del texto */
+        border-radius: 10px; /* Bordes redondeados */
+        border-left: 6px solid rgb(139, 0, 0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de la notificación */
+        margin-top: 50px ;
+        font-size: 13px;
+}

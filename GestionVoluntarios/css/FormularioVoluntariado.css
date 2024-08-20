@@ -1,0 +1,286 @@
+
+body {
+    font-family: Arial, sans-serif; 
+    z-index: 90;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+    background-color: rgb(255, 250, 250);
+
+    
+    
+}
+
+
+
+
+
+nav {
+    background-color: #333;
+    
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    
+}
+
+nav .nav-container {
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+
+}
+
+
+
+/*Formulario-container*/
+main{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 100;
+    margin-top: 100px;  
+}
+
+
+.form-container {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 530px;
+    z-index: 1000;
+    overflow: hidden;
+    margin-bottom: 50px;
+    
+}
+
+.banner {
+    width: 100%;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    background-image: url(../imagen1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 76px;
+    position: relative;
+ 
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+
+
+
+
+/*Formulario*/
+
+form{
+    
+    background-color: #fff;
+    padding:50px 35px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 430px;
+    z-index: 1000;
+ 
+}
+
+form h2{
+    font-size: 35px;
+    color: #0d0d0d;
+    margin: 0;
+}
+
+form p{
+    font-size: 16px;
+    color: #5e5e5e;
+    margin-bottom: 35px;
+}
+
+.input-wrapper{
+    position: relative;
+    width: 305px;
+    margin-bottom: 35px;
+
+}
+
+.input-wrapper input, input{
+    color: #0d0d0d;
+    padding: 20px 60px 20px 60px;
+    width: 100%;
+    border-radius: 15px;
+    border:0;
+    box-shadow: 0 0 5px rgba(237, 189, 169, 0.7);
+    outline: none;
+    font-size: 16px;
+}
+
+.input-wrapper label{
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    transform: translateY(-100%);
+    font-size: 18px;
+    pointer-events: none;
+    color: #f1a489;
+    transition: .3s;
+
+    
+}
+input:focus ~ label, textarea:focus ~ label{
+    top: 7px;
+    left: 40px;
+    font-size: 16px;
+    background: #fff;
+    padding: 0 2px;
+    color: rgba(237, 189, 169, 0.7);
+}
+input:valid ~ label, textarea:valid ~ label{
+    top: 7px;
+    left: 40px;
+    font-size: 16px;
+    background: #fff;
+    padding: 0 2px;
+    color: rgba(237, 189, 169, 0.7);
+}
+
+textarea{
+    color: #0d0d0d;
+    padding: 20px 60px 20px 60px;
+    width: 100%;
+    border-radius: 25px;
+    border: 0;
+    box-shadow: 0 0 5px rgba(237, 189, 169, 0.7);
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    line-height: 1.5;
+}
+    
+
+
+
+.btn{
+    padding: 20px;
+    background: linear-gradient(
+        90deg, 
+        rgb(178, 34, 34) 25%, 
+        rgb(139, 0, 0) 100%);
+    box-shadow: 0 0 10px #e8aeaeb3;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: rgb(240, 128, 128);
+}
+
+.success{
+    position: absolute;
+    top: 60px;
+    color: #00c83c;
+    font-size: 18px;
+}
+
+.error{
+    position: absolute;
+    top: 50px;
+    color: #e02d00;
+    font-size: 18px;
+}
+
+@media(max-width:991px){
+    main{
+        padding: 10px;
+    }
+
+
+
+   .form-container{
+    padding: 0px 20px;
+        width: 100%;
+   }
+
+
+
+    form{
+        padding: 20px;
+        width: 100%;
+    }
+    .input-wrapper{
+        position: relative;
+        width: 88%;
+        margin-bottom: 35px;
+    }
+    .input-wrapper input{
+        padding: 20px 0px 20px 45px;
+    }
+
+    textarea{
+        padding: 20px 0px 20px 45px;
+    }
+ 
+
+
+}
