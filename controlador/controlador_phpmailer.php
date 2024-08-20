@@ -13,15 +13,15 @@ function enviarCorreoConfirmacion($correo, $token) {
     try {
         // Configuración del servidor SMTP
         $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
+        $mail->Host = 'arsocial.fiei.online';  // Cambiar por tu servidor SMTP
         $mail->SMTPAuth = true;
-        $mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
-        $mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
+        $mail->Username = 'proyecto_integrador@arsocial.fiei.online';  // Cambiar por tu dirección de correo
+        $mail->Password = 'R-Q.=m)SCqZ+';  // Cambiar por tu contraseña
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port = 587;  // Puerto SMTP
+        $mail->Port = 465;  // Puerto SMTP
         
         // Configuración del correo
-        $mail->setFrom('srodrigamer2@gmail.com', 'Victor');
+        $mail->setFrom('proyecto_integrador@arsocial.fiei.online', 'CuresUNFV');
         $mail->addAddress($correo);
         $mail->Subject = 'Confirmacion de Registro';
         $mail->isHTML(true);

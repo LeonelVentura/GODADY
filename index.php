@@ -7,8 +7,8 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <!--Iconos-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
@@ -25,35 +25,32 @@ session_start();
                             <a class="nav-link" href="">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../Calendario/Calendario.php">Calendario</a>
+                            <a class="nav-link" href="./Calendario/modulos/inicio.php">Calendario</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./comentarios.php">Publicaciones</a>
+                            <a class="nav-link" href="./publicar/eventos.php">Eventos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../publicar/eventos.php">Eventos</a>
+                            <a class="nav-link" href="./publicar/formulario.php">Publicar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../publicar/formulario.php">Publicar</a>
+                            <a class="nav-link" href="./GestionVoluntarios/FormularioVoluntariado.php">Voluntariado</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../GestionVoluntarios/FormularioVoluntariado.php">Voluntariado</a>
+                            <a class="nav-link" href="./GestionVoluntarios/administrador.php">Solicitudes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../GestionVoluntarios/administrador.php">Solicitudes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../Contacto/contacto.php">Contacto</a>
+                            <a class="nav-link" href="./Contacto/contacto.php">Contacto</a>
                         </li>
                     </ul>
                 </div>
                 <div class="auth-section">
                     <?php if (isset($_SESSION['nombre'])) : ?>
                         <span>Hola, <?= $_SESSION['nombre']; ?></span>
-                        <a class="nav-link" href="../controlador/controlador_logout.php">Salir</a>
+                        <a class="nav-link" href="./controlador/controlador_logout.php">Salir</a>
                     <?php else : ?>
                         <div class="auth-links2">
-                            <a class="nav-link login" href="./login.php"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+                            <a class="nav-link login" href="./web/login.php"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -210,7 +207,7 @@ session_start();
             <div class="box">
                 <h2>SIGUENOS</h2>
                 <div class="red-social">
-                    <a href="#" class="bi bi-facebook"></a>
+                    <a href="https://www.facebook.com/UNFV.EDU" class="bi bi-facebook"></a>
                     <a href="#" class="bi bi-instagram"></a>
                     <a href="#" class="bi bi-twitter"></a>
                     <a href="#" class="bi bi-youtube"></a>
