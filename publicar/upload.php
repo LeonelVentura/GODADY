@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "proyecto";
+$username = "cures_dev";
+$password = "yZJSUpXg4tnu";
+$dbname = "arsocial_db";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);

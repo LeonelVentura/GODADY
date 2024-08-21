@@ -162,7 +162,25 @@ form p{
     margin-bottom: 35px;
 
 }
+.input-wrapper select {
+    color: #0d0d0d;
+    padding: 20px 60px; /* Ajuste del padding para alinear con otros campos */
+    width: 100%;
+    border-radius: 15px; /* Igual que el <input> */
+    border: 0;
+    box-shadow: 0 0 5px rgba(237, 189, 169, 0.7); /* Igual que el <input> */
+    outline: none;
+    font-size: 16px;
+    background-color: #fff; /* Fondo blanco para coincidir con el <input> */
+    appearance: none; /* Elimina el estilo predeterminado del navegador */
+    -webkit-appearance: none; /* Elimina el estilo predeterminado en WebKit (Chrome, Safari) */
+    -moz-appearance: none; /* Elimina el estilo predeterminado en Firefox */
+}
 
+.input-wrapper select:focus {
+    border-color: rgba(237, 189, 169, 0.7); /* Ajuste del borde cuando está en foco */
+    box-shadow: 0 0 5px rgba(237, 189, 169, 0.7); /* Igual que el <input> */
+}
 .input-wrapper input, input{
     color: #0d0d0d;
     padding: 20px 60px 20px 60px;

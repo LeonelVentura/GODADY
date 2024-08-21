@@ -1,19 +1,23 @@
 <?php
+require 'src/Exception.php';
+require 'src/PHPMailer.php';
+require 'src/SMTP.php';
+
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'phpmailer/vendor/autoload.php';
+
 $mail = new PHPMailer;
 
 $mail->isSMTP();
-$mail->SMTPSecure = 'ssl';
 $mail->SMTPAuth = true;
-$mail->Host = 'smtp.gmail.com';
-$mail->Port = 587;
-$mail->Username = 'dhanery23pf@gmail.com';
-$mail->Password = 'kncyykxaeighwjkw';
+$mail->Host = 'arsocial.fiei.online';
+$mail->Port = 465;
+$mail->Username = 'proyecto_integrador@arsocial.fiei.online';  // Cambiar por tu dirección de correo
+$mail->Password = 'R-Q.=m)SCqZ+';  // Cambiar por tu contraseña
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
 
-$mail->setFrom('dhanery23pf@gmaio.com');
+$mail->setFrom('proyecto_integrador@arsocial.fiei.online');
 $mail->addAddress('recipients@email-address.com');
 $mail->Subject = 'Hello from PHPMailer!';
 $mail->Body = 'This is a test.';

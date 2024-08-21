@@ -2,7 +2,7 @@
 
 
 // Conexión a la base de datos
-$conex = mysqli_connect("localhost", "root", "", "proyecto");
+$conex = mysqli_connect("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
 if(!$conex) {
     die("Conexión fallida " . mysqli_connect_error());
 }

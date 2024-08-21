@@ -48,12 +48,17 @@
                 </div>
                 <div class="input-wrapper">
                      <input type="tel" id="phone" name="phone" required><br><br>
-                     <label for="phone">Teléfono movil</label> 
+                <label for="phone">Teléfono movil</label> 
                 </div>
                 <div class="input-wrapper">
-                    
-                    <input type="text" id="activity" name="activity" required><br><br>
-                    <label for="activity">Actividad</label> 
+                <select id="activity" name="activity" required>
+                <option value="" disabled selected>Selecciona una actividad</option>
+                    <?php
+            // Aquí se ejecuta el código PHP para obtener las actividades
+                include("obtener_actividades.php");
+                ?>
+                </selec>
+                <label for="activity">Actividad</label> 
                 </div>
                 <div class="input-wrapper">                    
                     <textarea type="text" id="message" name="message"></textarea><br><br>

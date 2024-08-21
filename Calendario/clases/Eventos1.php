@@ -1,13 +1,13 @@
 <?php
     
-    $conexion = mysqli_connect("localhost", "root", null, "proyecto");
+    $conexion = mysqli_connect("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
 
     class Eventos {
         private $conexion;
     
         public function __construct() {
             // Inicializa la conexión dentro del constructor
-            $this->conexion = new mysqli("localhost", "root", null, "proyecto");
+            $this->conexion = new mysqli("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
     
             if ($this->conexion->connect_error) {
                 die("Conexión fallida: " . $this->conexion->connect_error);

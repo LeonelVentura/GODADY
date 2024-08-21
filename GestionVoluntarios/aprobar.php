@@ -6,7 +6,7 @@
 $id = $_GET['id'];
 
 // Conexión a la base de datos
-$conex = mysqli_connect("localhost", "root", "", "proyecto");
+$conex = mysqli_connect("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
 if ($conex->connect_error) {
     die("Conexión fallida: " . $conex->connect_error);
 }
@@ -25,15 +25,14 @@ if ($conex->query($sql) === TRUE) {
        $mail = new PHPMailer;
 
        $mail->isSMTP();
-       $mail->SMTPSecure = 'ssl';
        $mail->SMTPAuth = true;
-       $mail->Host = 'smtp.gmail.com';
-       $mail->Port = 587;
-       $mail->Username = 'dhanery23pf@gmail.com';
-       $mail->Password = 'kncyykxaeighwjkw';
+       $mail->Host = 'arsocial.fiei.online';
+       $mail->Port = 465;
+       $mail->Username = 'proyecto_integrador@arsocial.fiei.online';  // Cambiar por tu dirección de correo
+       $mail->Password = 'R-Q.=m)SCqZ+';  // Cambiar por tu contraseña
        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
-
-       $mail->setFrom('dhanery23pf@gmaio.com');
+       
+       $mail->setFrom('proyecto_integrador@arsocial.fiei.online');
        $mail->addAddress("$solicitante[email]","  $solicitante[nombre] ");
        $mail->Subject = "Solicitud de Voluntariado Aprobada";
        $mail->Body = "Hola " . $solicitante['nombre'] . ",\n\nNos complace informarte que tu solicitud de voluntariado ha sido aceptada. \n\nSaludos,\nCENTRO UNIVERSITARIO DE RESPONSABILIDAD SOCIAL\nFIEI";
