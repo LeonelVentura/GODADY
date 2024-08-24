@@ -40,7 +40,7 @@ session_start();
                             <a class="nav-link" href="./GestionVoluntarios/administrador.php">Solicitudes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./Contacto/contacto.php">Contacto</a>
+                            <a class="nav-link" href="./contacto_sugerencia/contacto.php">Contacto</a>
                         </li>
                     </ul>
                 </div>
