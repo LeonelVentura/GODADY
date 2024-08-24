@@ -1,9 +1,9 @@
 
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "proyecto";
+$username = "cures_dev";
+$password = "yZJSUpXg4tnu";
+$dbname = "arsocial_db";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -84,10 +84,10 @@ body::before {
 
 .photo {
     margin: 100px; /* Reduce el margen entre las fotos */
-    border: 1px solid #ccc;
+    border: 3px solid #efa158;
     padding: 10px; /* Reduce el padding del contenedor de la foto */
     width: calc(100% - 40px); /* Ajusta el ancho según el margen */
-    max-width: 500px; /* Ajusta el ancho máximo según tus necesidades */
+    max-width: 510px; /* Ajusta el ancho máximo según tus necesidades */
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
 }
@@ -128,12 +128,14 @@ body::before {
 <div class="navbar">
     <a href="../index.php">Home</a>
     <a href="../contacto_sugerencia/sugerencia.php">!Sugerir Evento!</a>
-    <a href="../GestionVoluntarios/FormularioVoluntariado.php">👉
-    ¿Quieres ser Voluntario?👈</a>
+    <a href="../GestionVoluntarios/FormularioVoluntariado.php">
+    ¿Quieres ser Voluntario?</a>
 </div>
 
-
-<h1>Eventos</h1>
+<div class="">
+    <link rel="stylesheet" href="styles.css">
+<h1>Actividades y Eventos</h1>
+</div>
 <div class="gallery">
     <?php
     if ($result->num_rows > 0) {
