@@ -1,9 +1,9 @@
 
 <?php
 $servername = "localhost";
-$username = "cures_dev";
-$password = "yZJSUpXg4tnu";
-$dbname = "arsocial_db";
+$username = "root";
+$password = "";
+$dbname = "proyecto";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -23,6 +23,9 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Eventos FIEI</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    
     <style>
     body {
     position: relative;
@@ -53,13 +56,13 @@ body::before {
     padding: 2px 0; /* Reduce el padding para hacerla más delgada */
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     display: flex;
-    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    justify-content: flex-start; /* Alinea el contenido a la derecha */
 }
 
 .navbar a {
     display: block;
     color: #f2f2f2;
-    text-align: center;
+    text-align: left;
     padding: 5px 10px; /* Reduce el padding de los enlaces */
     text-decoration: none;
     font-size: 15px; /* Reduce el tamaño de fuente para hacerla más delgada */
@@ -124,6 +127,7 @@ body::before {
 
 <div class="navbar">
     <a href="../index.php">Home</a>
+    <a href="../contacto_sugerencia/sugerencia.php">!Sugerir Evento!</a>
     <a href="../GestionVoluntarios/FormularioVoluntariado.php">👉
     ¿Quieres ser Voluntario?👈</a>
 </div>
