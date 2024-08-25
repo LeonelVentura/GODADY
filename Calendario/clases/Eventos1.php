@@ -1,15 +1,14 @@
 <?php
-    
-    $conexion = mysqli_connect("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
-
+ /* $conexion = mysqli_connect("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db"); */
+$conexion = mysqli_connect("localhost", "root", "", "proyecto"); 
     class Eventos {
         private $conexion;
     
         public function __construct() {
             // Inicializa la conexión dentro del constructor
-            $this->conexion = new mysqli("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
-    
-            if ($this->conexion->connect_error) {
+             /* $this->conexion = new mysqli("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db"); */
+            $this->conexion = new mysqli("localhost", "root", "", "proyecto");
+            if ($this->conexion->connect_error) { 
                 die("Conexión fallida: " . $this->conexion->connect_error);
             }
         }
@@ -70,7 +69,6 @@
                                         
             return $query->execute();
         }
-
         public function eliminarEvento($id_evento) {
             
             $sql = "DELETE FROM eventos WHERE id_evento = ?";
@@ -87,7 +85,7 @@
                                         fecha = ? 
                     WHERE id_evento = ?";
             $query = $this->conexion->prepare($sql);
-            $query->bind_param('ssssi', $data['evento'],
+            $query->bind_param('ssss', $data['evento'],
                                             $data['hora_inicio'],
                                             $data['hora_fin'],
                                             $data['fecha'],

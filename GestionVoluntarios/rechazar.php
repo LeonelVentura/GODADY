@@ -2,13 +2,15 @@
 
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
-      require 'phpmailer/vendor/autoload.php';
+      require '../vendor/autoload.php';
 // rechazar_solicitud.php
 
 $id = $_GET['id'];
 
 // Conexión a la base de datos
-$conex = mysqli_connect("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
+ /* $conex = mysqli_connect("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db"); */
+ $conex = mysqli_connect("localhost", "root", "", "proyecto");
+
 if ($conex->connect_error) {
     die("Conexión fallida: " . $conex->connect_error);
 }
@@ -24,15 +26,23 @@ if ($conex->query($sql) === TRUE) {
  
     // Enviar notificación por correo
       $mail = new PHPMailer;
-
       $mail->isSMTP();
+      $mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
       $mail->SMTPAuth = true;
-      $mail->Host = 'arsocial.fiei.online';
-      $mail->Port = 465;
-      $mail->Username = 'proyecto_integrador@arsocial.fiei.online';  // Cambiar por tu dirección de correo
-      $mail->Password = 'R-Q.=m)SCqZ+';  // Cambiar por tu contraseña
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
+      $mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
+      $mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
+      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+      $mail->Port = 587;  // Puerto SMTP
       
+              /*    
+            $mail->isSMTP();
+            $mail->SMTPAuth = true;
+            $mail->Host = 'arsocial.fiei.online';
+            $mail->Port = 465;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Username = 'proyecto_integrador@arsocial.fiei.online';
+            $mail->Password = 'R-Q.=m)SCqZ+';
+            */
        $mail->setFrom('proyecto_integrador@arsocial.fiei.online');
        $mail->addAddress("$solicitante[email]","  $solicitante[nombre] ");
        $mail->Subject = "Solicitud de Voluntariado Rechazada";

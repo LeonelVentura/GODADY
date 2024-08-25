@@ -10,12 +10,22 @@ use PHPMailer\PHPMailer\Exception;
 $mail = new PHPMailer;
 
 $mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
 $mail->SMTPAuth = true;
-$mail->Host = 'arsocial.fiei.online';
-$mail->Port = 465;
-$mail->Username = 'proyecto_integrador@arsocial.fiei.online';  // Cambiar por tu dirección de correo
-$mail->Password = 'R-Q.=m)SCqZ+';  // Cambiar por tu contraseña
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
+$mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
+$mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->Port = 587;  // Puerto SMTP
+
+            /*
+            $mail->isSMTP();
+            $mail->SMTPAuth = true;
+            $mail->Host = 'arsocial.fiei.online';
+            $mail->Port = 465;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Username = 'proyecto_integrador@arsocial.fiei.online';
+            $mail->Password = 'R-Q.=m)SCqZ+';
+            */
 
 $mail->setFrom('proyecto_integrador@arsocial.fiei.online');
 $mail->addAddress('recipients@email-address.com');

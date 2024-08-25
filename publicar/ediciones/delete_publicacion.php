@@ -1,6 +1,10 @@
 <?php
 // Conectar a la base de datos
+/*
 $conn = new mysqli("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");
+*/
+
+$conn = new mysqli("localhost", "root" , "", "proyecto");
 
 // Verificar la conexión
 if ($conn->connect_error) {

@@ -10,12 +10,13 @@ session_start();
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/footer.css">
     <!--Iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
 </head>
 <body>
 <div class="hero_area">
-    <header class="header_section">
+<header class="header_section">
         <div class="container-fluid nav_container">
             <nav class="custom_nav-container navbar-expand-lg">
                 <a class="navbar-brand" href=""></a>
@@ -30,30 +31,39 @@ session_start();
                         <li class="nav-item">
                             <a class="nav-link" href="./publicar/eventos.php">Eventos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./publicar/formulario.php">Publicar</a>
-                        </li>
+                        <?php if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 1): ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./publicar/formulario.php">Publicar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./GestionVoluntarios/administrador.php">Solicitudes</a>
+                            </li>
+                        <?php endif; ?>
                         <li class="nav-item">
                             <a class="nav-link" href="./GestionVoluntarios/FormularioVoluntariado.php">Voluntariado</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./GestionVoluntarios/administrador.php">Solicitudes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./Contacto/contacto.php">Contacto</a>
+                            <a class="nav-link" href="./contacto_sugerencia/contacto.php">Contacto</a>
                         </li>
                     </ul>
                 </div>
+                
                 <div class="auth-section">
-                    <?php if (isset($_SESSION['nombre'])) : ?>
-                        <span>Hola, <?= $_SESSION['nombre']; ?></span>
-                        <a class="nav-link" href="./controlador/controlador_logout.php">Salir</a>
-                    <?php else : ?>
-                        <div class="auth-links2">
-                            <a class="nav-link login" href="./web/login.php"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
-                        </div>
-                    <?php endif; ?>
-                </div>
+    <?php if (isset($_SESSION['nombre'])) : ?>
+        <span>Hola, <?= $_SESSION['nombre']; ?></span>
+        <a class="nav-link" href="./controlador/controlador_logout.php">Salir</a>
+    <?php else : ?>
+        <div class="auth-links2">
+            <a class="nav-link login" href="./web/login.php"><i class="fas fa-sign-in-alt"></i> LOGIN</a>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 2): ?>
+        <form method="POST" action="">
+            <button type="submit" name="actualizar_rol" class="admin-btn">
+            <i class="fa fa-address-card" aria-hidden="true"></i></button>
+        </form>
+    <?php endif; ?>
+</div>
             </nav>
         </div>
     </header>
@@ -224,3 +234,4 @@ session_start();
 
 </body>
 </html>
+

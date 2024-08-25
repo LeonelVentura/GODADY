@@ -3,7 +3,7 @@
       include("conexion.php");
       use PHPMailer\PHPMailer\PHPMailer;
       use PHPMailer\PHPMailer\Exception;
-      require 'phpmailer/vendor/autoload.php';
+      require '../vendor/autoload.php';
 
 
       
@@ -47,20 +47,26 @@
              if(mysqli_query($conex, $consulta)){
 
                   $mail = new PHPMailer;
-
                   $mail->isSMTP();
-                  $mail->SMTPSecure = 'ssl';
+                  $mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
                   $mail->SMTPAuth = true;
-                  $mail->Host = 'smtp.gmail.com';
-                  $mail->Port = 587;
-                  $mail->Username = 'dhanery23pf@gmail.com';
-                  $mail->Password = 'kncyykxaeighwjkw';
-                  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; 
-
-
+                  $mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
+                  $mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
+                  $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                  $mail->Port = 587;  // Puerto SMTP
+                  
+           /*                   
+            $mail->isSMTP();
+            $mail->SMTPAuth = true;
+            $mail->Host = 'arsocial.fiei.online';
+            $mail->Port = 465;
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Username = 'proyecto_integrador@arsocial.fiei.online';
+            $mail->Password = 'R-Q.=m)SCqZ+';
+            */
                
 
-                  $mail->setFrom('dhanery23pf@gmail.com');
+                  $mail->setFrom('proyecto_integrador@arsocial.fiei.online','CuresUNFV');
                   $mail->addAddress("$email","$name");
                   $mail->Subject = "Confirmacion de Solicitud de Voluntariado";
                   $mail->Body = "Hola $name,\n\nGracias por tu interes en participar en la actividad de: $activity. Hemos recibido tu solicitud y nos pondremos en contacto contigo pronto.\n\nSaludos,\nCENTRO UNIVERSITARIO DE RESPONSABILIDAD SOCIAL\nFIEI";

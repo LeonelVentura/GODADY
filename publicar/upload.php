@@ -1,8 +1,15 @@
 <?php
+/*
 $servername = "localhost";
 $username = "cures_dev";
 $password = "yZJSUpXg4tnu";
 $dbname = "arsocial_db";
+*/
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "proyecto";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -82,4 +89,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close();
-?>

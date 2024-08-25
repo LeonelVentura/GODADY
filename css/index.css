@@ -70,6 +70,26 @@ header {
   display: flex;
   align-items: center;
 }
+.auth-section .admin-btn {
+    .admin-btn {
+        background-color: #007bff;
+        border: none;
+        border-radius: 50%;
+        color: white;
+        padding: 15px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .admin-btn:hover {
+        background-color: #0056b3;
+    }
+    
+    .admin-btn i {
+        margin: 0;
+    }
+}
 
 .auth-section span {
   margin-right: 20px;
@@ -86,6 +106,8 @@ header {
   font-weight: 600;
   font-size: 14px;
 }
+
+
 
 #notification-wrapper {
   position: relative;
@@ -179,6 +201,7 @@ header {
     border: 1px solid #fff;
     color: #eee;
 }
+
 /* thumbail */
 .thumbnail{
     position: absolute;
