@@ -11,7 +11,7 @@ if (!function_exists('enviarCorreoConfirmacion')) {
         $mail = new PHPMailer(true);
         
         try {
-            /*
+            
             $mail->isSMTP();
             $mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
             $mail->SMTPAuth = true;
@@ -19,8 +19,8 @@ if (!function_exists('enviarCorreoConfirmacion')) {
             $mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;  // Puerto SMTP
-            */
             
+            /*
             $mail->isSMTP();
             $mail->SMTPAuth = true;
             $mail->Host = 'arsocial.fiei.online';
@@ -28,7 +28,7 @@ if (!function_exists('enviarCorreoConfirmacion')) {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Username = 'proyecto_integrador@arsocial.fiei.online';
             $mail->Password = 'R-Q.=m)SCqZ+';
-            
+            */
 
             // Configuración del correo
             $mail->setFrom('proyecto_integrador@arsocial.fiei.online', 'CuresUNFV');

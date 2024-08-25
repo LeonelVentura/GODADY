@@ -9,7 +9,7 @@ if(!empty($_POST["btningresar"])){
         $sql = $conexion->query("SELECT * FROM Usuario WHERE usuario='$usuario' AND clave='$password'");
         
         if ($sql && $datos = $sql->fetch_object()) {    
-            $_SESSION["id"] = $datos->id;
+            $_SESSION["id"] = $datos->Cod_usuario;
             $_SESSION["nombre"] = $datos->nombres;
             $_SESSION["apellido"] = $datos->apellidos;
             $_SESSION["usuario"] = $datos->usuario;

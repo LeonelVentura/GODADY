@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "./controlador/controlador_admin_usuario.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,11 +59,24 @@ session_start();
         </div>
     <?php endif; ?>
     <?php if (isset($_SESSION['id_rol']) && $_SESSION['id_rol'] == 2): ?>
+    <!-- Botón que abre el modal -->
+    <button id="actualizarRolBtn" class="admin-btn">
+        <i class="fa fa-address-card" aria-hidden="true"></i>
+    </button>
+
+<?php endif; ?>
+
+<!-- Modal para ingresar la contraseña -->
+<div id="passwordModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
         <form method="POST" action="">
-            <button type="submit" name="actualizar_rol" class="admin-btn">
-            <i class="fa fa-address-card" aria-hidden="true"></i></button>
+            <label for="admin_password">Ingrese la contraseña de administrador:</label>
+            <input type="password" id="admin_password" name="admin_password" required>
+            <button type="submit" name="confirmar_actualizacion" class="confirm-btn">Confirmar</button>
         </form>
-    <?php endif; ?>
+    </div>
+</div>
 </div>
             </nav>
         </div>
@@ -231,6 +245,64 @@ session_start();
 
 <script src="../js/script.js"></script>
 <script src="../js/index.js"></script>
+<script>
+    document.getElementById('actualizarRolBtn').onclick = function() {
+    document.getElementById('passwordModal').style.display = "block";
+}
 
+document.querySelector('.close').onclick = function() {
+    document.getElementById('passwordModal').style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == document.getElementById('passwordModal')) {
+        document.getElementById('passwordModal').style.display = "none";
+    }
+}
+
+</script>
+
+<style>
+    /* El modal (oculto por defecto) */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+/* Botón para cerrar el modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+</style>
 </body>
 </html>
+
