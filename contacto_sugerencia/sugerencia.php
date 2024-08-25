@@ -5,60 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Sugerencia de Eventos</title>
     <style>
-   body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #00274C;
-  color: #fff;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #00274C;
+            background-image: url('https://cdn.pixabay.com/photo/2015/05/12/09/13/social-media-763731_1280.jpg'); /* Cambia esto por la URL de tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
 
-h2 {
-  text-align: center;
-  color: #fff;
-}
+        h2 {
+            text-align: center;
+            color: #fff;
+        }
 
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #555; /* Borde gris claro para contraste */
-  border-radius: 5px;
-  background-color: #194868; /* Azul más claro para el formulario */
-}
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            background-color: rgba(25, 72, 104, 0.9); /* Azul más claro con opacidad */
+        }
 
-/* Resto del CSS... */
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
 
-label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
 
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+        textarea {
+            resize: vertical;
+        }
 
-textarea {
-  resize: vertical;
-}
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
-input[type="submit"]:hover {
-  background-color: #45a049;
-}
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .back-button a {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .back-button a:hover {
+            background-color: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +112,10 @@ input[type="submit"]:hover {
 
         <input type="submit" value="Enviar Sugerencia">
     </form>
+
+    <div class="back-button">
+        <a href="../index.php">Regresar a la página principal</a>
+    </div>
+
 </body>
 </html>
-
