@@ -2,9 +2,15 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+<<<<<<< HEAD
 require '../vendor/phpmailer/phpmailer/src/Exception.php';
 require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require '..SMTP.phpSMTP.php';
+=======
+require './vendor/phpmailer/phpmailer/src/Exception.php';
+require './vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require './vendor/phpmailer/phpmailer/src/SMTP.php';
+>>>>>>> af761549e90ba56cfbed03f623d4662fc8a85042
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

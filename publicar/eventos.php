@@ -30,6 +30,9 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Eventos FIEI</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="">
+    
     <style>
     body {
     position: relative;
@@ -60,13 +63,13 @@ body::before {
     padding: 2px 0; /* Reduce el padding para hacerla más delgada */
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     display: flex;
-    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    justify-content: flex-start; /* Alinea el contenido a la derecha */
 }
 
 .navbar a {
     display: block;
     color: #f2f2f2;
-    text-align: center;
+    text-align: left;
     padding: 5px 10px; /* Reduce el padding de los enlaces */
     text-decoration: none;
     font-size: 15px; /* Reduce el tamaño de fuente para hacerla más delgada */
@@ -88,10 +91,10 @@ body::before {
 
 .photo {
     margin: 100px; /* Reduce el margen entre las fotos */
-    border: 1px solid #ccc;
+    border: 3px solid #efa158;
     padding: 10px; /* Reduce el padding del contenedor de la foto */
     width: calc(100% - 40px); /* Ajusta el ancho según el margen */
-    max-width: 500px; /* Ajusta el ancho máximo según tus necesidades */
+    max-width: 510px; /* Ajusta el ancho máximo según tus necesidades */
     box-sizing: border-box;
     background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
 }
@@ -131,12 +134,15 @@ body::before {
 
 <div class="navbar">
     <a href="../index.php">Home</a>
-    <a href="../GestionVoluntarios/FormularioVoluntariado.php">👉
-    ¿Quieres ser Voluntario?👈</a>
+    <a href="../contacto_sugerencia/sugerencia.php">!Sugerir Evento!</a>
+    <a href="../GestionVoluntarios/FormularioVoluntariado.php">
+    ¿Quieres ser Voluntario?</a>
 </div>
 
-
-<h1>Eventos</h1>
+<div class="">
+    <link rel="stylesheet" href="styles.css">
+<h1>Actividades y Eventos</h1>
+</div>
 <div class="gallery">
     <?php
     if ($result->num_rows > 0) {
