@@ -1,7 +1,7 @@
-<?php
-//include "../GestionVoluntarios/ReporteExel/funciones.php";
+<!--?php
+include "../GestionVoluntarios/ReporteExel/funciones.php";
 $volunatrios = obtenerVoluntarios();
-?>
+?-->
 
 <!DOCTYPE html>
 <html lang="en">
