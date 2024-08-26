@@ -1,5 +1,5 @@
 <?php
-include "../GestionVoluntarios/ReporteExel/funciones.php";
+//include "../GestionVoluntarios/ReporteExel/funciones.php";
 $volunatrios = obtenerVoluntarios();
 ?>
 
