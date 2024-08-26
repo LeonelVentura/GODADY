@@ -8,7 +8,7 @@
 $conn = new mysqli("localhost", "root" , "", "proyecto");
 
 // Verificar la conexión
-if(!$conex) {
+if(!$conn) {
     die("Conexión fallida " . mysqli_connect_error());
 }
 
@@ -26,7 +26,7 @@ if(!$conex) {
 
 // Obtener solicitudes
 $sql = "SELECT * FROM formulario WHERE estado = 'pendiente' LIMIT $empieza, $por_pagina" ;
-$result = $conex->query($sql);
+$result = $conn->query($sql);
 
 ?>
 
@@ -104,7 +104,7 @@ $result = $conex->query($sql);
         </div>
                     <?php
                     $sql="SELECT * FROM  formulario WHERE estado = 'pendiente'";
-                    $result=$conex->query($sql);
+                    $result=$conn->query($sql);
 
                     $total_registros=mysqli_num_rows($result);
                     $total_paginas=ceil($total_registros/$por_pagina);

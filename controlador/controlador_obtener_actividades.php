@@ -10,13 +10,13 @@ if ($conn->connect_error) {
 }
 
 // Consulta para obtener las actividades
-$sql = "SELECT id_eventos, evento FROM eventos";
+$sql = "SELECT id_evento, evento FROM eventos";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // Output de cada fila
     while($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row['id_eventos'] . "'>" . $row['evento'] . "</option>";
+        echo "<option value='" . $row['id_evento'] . "'>" . $row['evento'] . "</option>";
     }
 } else {
     echo "<option value=''>No hay actividades disponibles</option>";
@@ -24,3 +24,4 @@ if ($result->num_rows > 0) {
 
 // Cerrar la conexión
 $conn->close();
+?>

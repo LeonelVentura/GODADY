@@ -24,16 +24,16 @@ if ($conex->query($sql) === TRUE) {
     $solicitante = $result->fetch_assoc();
 
  
-    // Enviar notificación por correo
-      $mail = new PHPMailer;
-      $mail->isSMTP();
-      $mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
-      $mail->SMTPAuth = true;
-      $mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
-      $mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
-      $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-      $mail->Port = 587;  // Puerto SMTP
-      
+    $mail = new PHPMailer;
+
+    $mail->isSMTP();
+    $mail->Host       = 'arsocial.fiei.online';         // Cambia esto por tu servidor SMTP
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'proyecto_integrador@arsocial.fiei.online';    // Cambia esto por tu usuario SMTP
+    $mail->Password   = 'R-Q.=m)SCqZ+';               // Cambia esto por tu contraseña SMTP
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
+    
               /*    
             $mail->isSMTP();
             $mail->SMTPAuth = true;

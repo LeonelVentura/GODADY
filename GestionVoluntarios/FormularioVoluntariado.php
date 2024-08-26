@@ -54,9 +54,7 @@
 <div class="input-wrapper">
     <select id="activity" name="activity" required>
         <option value="" disabled selected>Selecciona una actividad</option>
-        <?php
-        include("obtener_actividades.php");
-        ?>
+        <?php include("../controlador/controlador_obtener_actividades.php"); ?>
     </select>
     <label for="activity">Actividad</label> 
 </div>

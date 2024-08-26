@@ -12,30 +12,21 @@ if (!function_exists('enviarCorreoConfirmacion')) {
         
         try {
             
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
-            $mail->SMTPAuth = true;
-            $mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
-            $mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;  // Puerto SMTP
-            
-            /*
-            $mail->isSMTP();
-            $mail->SMTPAuth = true;
-            $mail->Host = 'arsocial.fiei.online';
-            $mail->Port = 465;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Username = 'proyecto_integrador@arsocial.fiei.online';
-            $mail->Password = 'R-Q.=m)SCqZ+';
-            */
+        $mail->isSMTP();
+        $mail->Host       = 'arsocial.fiei.online';         // Cambia esto por tu servidor SMTP
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'proyecto_integrador@arsocial.fiei.online';    // Cambia esto por tu usuario SMTP
+        $mail->Password   = 'R-Q.=m)SCqZ+';               // Cambia esto por tu contraseña SMTP
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+        
+        // Remitente
+        $mail->setFrom('proyecto_integrador@arsocial.fiei.online', 'Contacto');
+        $mail->addAddress($correo);
 
-            // Configuración del correo
-            $mail->setFrom('proyecto_integrador@arsocial.fiei.online', 'CuresUNFV');
-            $mail->addAddress($correo);
             $mail->Subject = 'Confirmacion de Registro';
             $mail->isHTML(true);
-            $mail->Body = 'Gracias por registrarte. Haz clic en el siguiente enlace para confirmar tu registro: <a href="https://arsocial.fiei.online/web/confirmar_registro.php?token=' . $token . '">Confirmar Registro</a>';
+            $mail->Body = 'Gracias por registrarte. Haz clic en el siguiente enlace para confirmar tu registro: <a href="http://localhost:3000/web/confirmar_registro.php?token=' . $token . '">Confirmar Registro</a>';
             
             // Envío del correo
             $mail->send();

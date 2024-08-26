@@ -8,15 +8,14 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 $mail = new PHPMailer;
-
+            
 $mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
-$mail->SMTPAuth = true;
-$mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
-$mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
+$mail->Host       = 'arsocial.fiei.online';         // Cambia esto por tu servidor SMTP
+$mail->SMTPAuth   = true;
+$mail->Username   = 'proyecto_integrador@arsocial.fiei.online';    // Cambia esto por tu usuario SMTP
+$mail->Password   = 'R-Q.=m)SCqZ+';               // Cambia esto por tu contraseña SMTP
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-$mail->Port = 587;  // Puerto SMTP
-
+$mail->Port       = 587;
             /*
             $mail->isSMTP();
             $mail->SMTPAuth = true;

@@ -1,6 +1,6 @@
 <?php
 // controlador_registrar_usuario.php
-require_once 'controlador_phpmailer.php';
+
 include ("../conexion.php");
 include ("controlador_phpmailer.php");
 
@@ -25,9 +25,11 @@ if (!empty($_POST["btnregistro"])) {
         $contraseña = mysqli_real_escape_string($conexion, $contraseña);
         
         // Generar token único para la confirmación de correo
+        $rol= 2 ;
         $token = bin2hex(random_bytes(16));
+        $confirmado = 0;
 
-        $sql = $conexion->query("INSERT INTO usuario (nombres, apellidos, facultad, correo, usuario, clave, token) VALUES ('$nombre', '$apellido', '$facultad', '$correo', '$username', '$contraseña', '$token')");
+        $sql = $conexion->query("INSERT INTO usuario (nombres, apellidos, facultad, id_rol, correo, usuario, clave, token, confirmado) VALUES ('$nombre', '$apellido', '$facultad', '$rol', '$correo', '$username', '$contraseña', '$token', '$confirmado')");
         
         if ($sql) {
             // Enviar correo de confirmación

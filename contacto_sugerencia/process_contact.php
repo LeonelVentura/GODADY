@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 
 require '../vendor/phpmailer/phpmailer/src/Exception.php';
 require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
-require '..SMTP.phpSMTP.php';
+require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Port       = 587;
         
         // Remitente
-        $mail->setFrom($correopersonal, 'Contacto');
-        $mail->addAddress('proyecto_integrador@arsocial.fiei.online');
+        $mail->setFrom('proyecto_integrador@arsocial.fiei.online', 'Contacto');
+        $mail->addAddress($correopersonal);
 
         // Asunto y contenido del correo
         $mail->Subject = "Nuevo mensaje de contacto: " . $asunto;

@@ -30,13 +30,13 @@
              $activity=trim($_POST['activity']);
              $message=trim($_POST['message']);
              $fecha=date("Y/m/d");
-             
+             $estado="pendiente";
 
-             $consulta="INSERT INTO formulario(nombre, apellidos, codigo_de_estudiante, email, telefono, actividad, mensaje, fecha)
-                  VALUES('$name', '$lastname', '$codigo','$email', '$phone', '$activity','$message', '$fecha')";
+             $consulta="INSERT INTO formulario(nombre, apellidos, codigo_de_estudiante, email, telefono, actividad, mensaje, fecha, estado)
+                  VALUES('$name', '$lastname', '$codigo','$email', '$phone', '$activity','$message', '$fecha', '$estado')";
 
                   //Validacion de una cuenta-evitar que se duplique el registro
-             $checkEmail=mysqli_query($conex, "SELECT * FROM formulario WHERE email='$email'");
+             $checkEmail=mysqli_query($conn, "SELECT * FROM formulario WHERE email='$email'");
              if (mysqli_num_rows($checkEmail) > 0) {
                echo '
                <script src="./js/alert.js"></script>
@@ -44,16 +44,17 @@
                exit();
              }
              
-             if(mysqli_query($conex, $consulta)){
+             if(mysqli_query($conn, $consulta)){
 
                   $mail = new PHPMailer;
+
                   $mail->isSMTP();
-                  $mail->Host = 'smtp.gmail.com';  // Cambiar por tu servidor SMTP
-                  $mail->SMTPAuth = true;
-                  $mail->Username = 'srodrigamer2@gmail.com';  // Cambiar por tu dirección de correo
-                  $mail->Password = 'msnf hylg eelt zrkv';  // Cambiar por tu contraseña
+                  $mail->Host       = 'arsocial.fiei.online';         // Cambia esto por tu servidor SMTP
+                  $mail->SMTPAuth   = true;
+                  $mail->Username   = 'proyecto_integrador@arsocial.fiei.online';    // Cambia esto por tu usuario SMTP
+                  $mail->Password   = 'R-Q.=m)SCqZ+';               // Cambia esto por tu contraseña SMTP
                   $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-                  $mail->Port = 587;  // Puerto SMTP
+                  $mail->Port       = 587;
                   
            /*                   
             $mail->isSMTP();

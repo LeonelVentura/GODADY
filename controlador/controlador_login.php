@@ -6,7 +6,7 @@ if(!empty($_POST["btningresar"])){
         $usuario = $_POST["usuario"];
         $password = $_POST["password"];
         
-        $sql = $conexion->query("SELECT * FROM Usuario WHERE usuario='$usuario' AND clave='$password'");
+        $sql = $conexion->query("SELECT * FROM Usuario WHERE usuario='$usuario' AND clave='$password' AND confirmado='1'");
         
         if ($sql && $datos = $sql->fetch_object()) {    
             $_SESSION["id"] = $datos->Cod_usuario;
