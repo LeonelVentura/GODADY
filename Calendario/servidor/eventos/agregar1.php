@@ -7,6 +7,7 @@
         'evento' => $_POST['nombre_evento'], 
         'hora_inicio' => $_POST['fecha'] . " " . $_POST['hora_inicio'], 
         'hora_fin' => $_POST['fecha'] . " " . $_POST['hora_fin'],
+        'estado' => $_POST['estado'],
         'fecha' => $_POST['fecha']
     );
 

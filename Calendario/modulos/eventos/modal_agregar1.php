@@ -17,6 +17,9 @@
           
           <label for="hora_fin">Hora fin</label>
           <input type="time" class="form-control" id="hora_fin" name="hora_fin" required>
+
+          <label for="estado">Estado</label>
+          <input type="text" class="form-control" id="estado" name="estado" required>
           
           <label for="fecha">Fecha</label>
           <input type="date" class="form-control" id="fecha" name="fecha" required>

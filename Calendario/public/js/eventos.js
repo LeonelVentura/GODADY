@@ -82,6 +82,7 @@ function editarEvento(id_evento){
             $('#nombre_eventou').val(respuesta[0].evento);
             $('#hora_iniciou').val(respuesta[0].hora_inicio);
             $('#hora_finu').val(respuesta[0].hora_fin);
+            $('#estadou').val(respuesta[0].estado);
             $('#fechau').val(respuesta[0].fecha);
             $('#id_evento').val(respuesta[0].id_evento);
         }

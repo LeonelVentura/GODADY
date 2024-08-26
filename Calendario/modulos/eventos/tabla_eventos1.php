@@ -16,6 +16,7 @@
             <th>Nombre</th>
             <th>Hora inicio</th>
             <th>Hora fin</th>
+            <th>Estado</th>
             <th>Fecha</th>
             <th>Editar</th>
             <th>Eliminar</th>
@@ -27,6 +28,7 @@
             <td><?php echo $key['evento'] ?></td>
             <td><?php echo $key['hora_inicio'] ?></td>
             <td><?php echo $key['hora_fin'] ?></td>
+            <td><?php echo $key['estado'] ?></td>
             <td><?php echo $key['fecha'] ?></td>
             
             <td>

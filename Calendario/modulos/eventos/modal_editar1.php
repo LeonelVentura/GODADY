@@ -15,6 +15,8 @@
           <input type="time" class="form-control" id="hora_iniciou" name="hora_iniciou" required>
           <label for="hora_finu">Hora fin</label>
           <input type="time" class="form-control" id="hora_finu" name="hora_finu" required>
+          <label for="estadou">Estado</label>
+          <input type="text" class="form-control" id="estadou" name="estadou" required>
           <label for="fechau">Fecha</label>
           <input type="date" class="form-control" id="fechau" name="fechau" required>
       </div>
