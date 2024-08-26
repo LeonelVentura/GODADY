@@ -19,6 +19,7 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
                             evento,
                             DATE_FORMAT(hora_inicio, '%H:%i:%s') AS hora_inicio, 
                             DATE_FORMAT(hora_fin, '%H:%i:%s') AS hora_fin,
+                            estado,
                             DATE_FORMAT(fecha, '%d-%m-%Y') AS fecha
                     FROM 
                         eventos 
@@ -28,6 +29,7 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
                             evento,
                             DATE_FORMAT(hora_inicio, '%H:%i:%s') AS hora_inicio, 
                             DATE_FORMAT(hora_fin, '%H:%i:%s') AS hora_fin,
+                            estado,
                             DATE_FORMAT(fecha, '%d-%m-%Y') AS fecha
                     FROM 
                         eventos";
@@ -45,6 +47,7 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
                             evento,
                             DATE_FORMAT(hora_inicio, '%H:%i:%s') AS hora_inicio, 
                             DATE_FORMAT(hora_fin, '%H:%i:%s') AS hora_fin,
+                            estado,
                             fecha
                     FROM 
                         eventos 
@@ -58,13 +61,15 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
                                             evento,
                                             hora_inicio,
                                             hora_fin,
+                                            estado,
                                             fecha) 
-                            VALUES (?, ?, ?, ?)";
+                            VALUES (?, ?, ?, ?, ?)";
             $query = $this->conexion->prepare($sql);
-            $query->bind_param('ssss',
+            $query->bind_param('sssss',
                                         $data['evento'],
                                         $data['hora_inicio'],
                                         $data['hora_fin'],
+                                        $data['estado'],
                                         $data['fecha']);
                                         
             return $query->execute();
@@ -81,13 +86,15 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
             
             $sql = "UPDATE eventos SET evento = ?,
                                         hora_inicio = ?,
-                                        hora_fin = ?, 
+                                        hora_fin = ?,
+                                        estado = ?, 
                                         fecha = ? 
                     WHERE id_evento = ?";
             $query = $this->conexion->prepare($sql);
-            $query->bind_param('ssss', $data['evento'],
+            $query->bind_param('sssssi', $data['evento'],
                                             $data['hora_inicio'],
                                             $data['hora_fin'],
+                                            $data['estado'],
                                             $data['fecha'],
                                             $data['id_evento']);
                                             
@@ -100,7 +107,8 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
                         id_evento AS id,
                         evento AS title,
                         hora_inicio AS start,
-                        hora_fin AS end
+                        hora_fin AS end,
+                        estado AS estate
                     FROM
                         eventos";
                        

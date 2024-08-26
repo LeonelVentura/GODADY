@@ -6,6 +6,7 @@
         "evento" => $_POST['nombre_eventou'],
         "hora_inicio" => $_POST['fechau']. " " .$_POST['hora_iniciou'],
         "hora_fin" => $_POST['fechau']. " " .$_POST['hora_finu'],
+        "estado" => $_POST['estadou'],
         "fecha" => $_POST['fechau']
         //"id_evento" => $_SESSION['id_evento']
     );
