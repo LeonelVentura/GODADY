@@ -10,11 +10,14 @@ h1 {
     border-bottom: 2px solid #efa158; /* Línea inferior */
     background-color: #e6e3e3; /* Color de fondo */
     border-radius: 10px; /* Bordes redondeados */
+   
+   
+    
 }
 
    body {
     position: relative;
-    margin-top: 60px; /* Espacio para la barra de navegación fija */
+    margin-top: 40px; /* Espacio para la barra de navegación fija */
     background: url('./uploads/UNFV.jpg') no-repeat center center fixed;
     background-size: cover;   
 }
@@ -38,7 +41,7 @@ body::before {
     top: 0;
     left: 0;
     z-index: 1000;
-    padding: 2px 0; /* Reduce el padding para hacerla más delgada */
+    padding: 5px 0; /* Reduce el padding para hacerla más delgada */
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     display: flex;
     justify-content: flex-start; /* Alinea el contenido a la derecha */
