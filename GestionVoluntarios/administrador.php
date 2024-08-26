@@ -1,34 +1,7 @@
-<?php
-
-
-// Conexión a la base de datos
-
-/*$conn = new mysqli("localhost", "cures_dev", "yZJSUpXg4tnu", "arsocial_db");*/
-
-$conn = new mysqli("localhost", "root" , "", "proyecto");
-
-// Verificar la conexión
-if(!$conn) {
-    die("Conexión fallida " . mysqli_connect_error());
-}
-
-
-   $por_pagina=10;
-   if(isset($_GET['pagina']) && $_GET['pagina']>0)
-   $pagina=$_GET['pagina'];
-   else 
-   {
-    $pagina=1;
-   }
-    $empieza=($pagina-1) * $por_pagina;
-
-
-
-// Obtener solicitudes
-$sql = "SELECT * FROM formulario WHERE estado = 'pendiente' LIMIT $empieza, $por_pagina" ;
-$result = $conn->query($sql);
-
-?>
+<!--?php
+include "../GestionVoluntarios/ReporteExel/funciones.php";
+$volunatrios = obtenerVoluntarios();
+?-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,85 +17,68 @@ $result = $conn->query($sql);
 <body>
 <input type="checkbox" id="menu-toggle">
     
-    
-    <div class="main-content">
-        
+<div class="main-content">
     <header>
-         <div class="header-content"></div>
+        <div class="header-content"></div>
     </header>
     <main>
         <div class="page-header" id="page-header">
-                <h1>Solicitudes</h1>
-                <a href="../index.php"><small>Home</small></a>
-                <a href="./administrador.php"><small>Solicitudes</small></a>
+            <h1>Solicitudes</h1>
+            <a href="../index.php"><small>Home</small></a>
+            <a href="./administrador.php"><small>Solicitudes</small></a>
         </div>
-        <div class="page-content">
-            <div class="analytics"></div>
-            <div class="records table-responsive">
-                <div>
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                   <th>Nombre</th>
-                                   <th>Apellidos</th>
-                                   <th>Codigo de Estudiante</th>
-                                   <th>Correo Institucional</th>
-                                   <th>Teléfono</th>
-                                   <th>Actividad</th>
-                                   <th>Mensaje</th>
-                                   <th>Acciones</th>
-                            </tr>                                 
-                        </thead>
-                        <tbody>
-                            <?php
-                            while($row = $result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . $row['id_form'] . "</td>";
-                                echo "<td>" . $row['nombre'] . "</td>";
-                                echo "<td>" . $row['apellidos'] . "</td>";
-                                echo "<td>" . $row['codigo_de_estudiante'] . "</td>";
-                                echo "<td>" . $row['email'] . "</td>";
-                                echo "<td>" . $row['telefono'] . "</td>";
-                                echo "<td>" . $row['actividad'] . "</td>";
-                                echo "<td class='mensaje'>" . $row['mensaje'] . "</td>";
-                                echo "<td class='acciones'>
+        <div class="tabs">
+    <button class="tablink" onclick="openTab('Pendientes', this)" <?= isset($_GET['tab']) && $_GET['tab'] == 'Pendientes' ? 'class="active"' : '' ?>>Pendientes</button>
+    <button class="tablink" onclick="openTab('Aprobadas', this)" <?= isset($_GET['tab']) && $_GET['tab'] == 'Aprobadas' ? 'class="active"' : '' ?>>Aprobadas</button>
+    <button class="tablink" onclick="openTab('Rechazadas', this)" <?= isset($_GET['tab']) && $_GET['tab'] == 'Rechazadas' ? 'class="active"' : '' ?>>Rechazadas</button>
+</div>
+<!--a href="./ReporteExel/exel.php" class="download-link">Descargar exel</a-->
 
-                                <a class='accion aprobar' href='aprobar.php?id=" . $row['id_form'] . "'>Aprobar</a> |
-                                <a class='accion rechazar' href='rechazar.php?id=" . $row['id_form'] . "'>Rechazar</a>
-                                </td>";
-                                echo "</tr>";
-                                }
-                                ?>
-                        </tbody>                              
-                    </table>
-
-                </div>
-
-            </div>
-            
+        <div id="Pendientes" class="tabcontent">
+            <?php include './Estado/solicitudes_pendientess.php'; ?>
         </div>
-                    <?php
-                    $sql="SELECT * FROM  formulario WHERE estado = 'pendiente'";
-                    $result=$conn->query($sql);
 
-                    $total_registros=mysqli_num_rows($result);
-                    $total_paginas=ceil($total_registros/$por_pagina);
+        <div id="Aprobadas" class="tabcontent">
+            <?php include './Estado/solicitudes_aprobadas.php'; ?>
+        </div>
 
-
-                    echo"<center class='paginacion-wrapper'><a class='paginacion' href='administrador.php?pagina=1'>"  .'<<'. "</a>";
-                    for($i=1;  $i<=$total_paginas;   $i++)
-                    {
-                        echo"<a class='paginacion' href='administrador.php?pagina=".$i."'> ".$i." </b> ";
-                        }
-                        echo"<a class='paginacion' href='administrador.php?pagina=$total_paginas'>"  .'>>'. "</a></center>";
-                    ?>
-            
-    </main>
+        <div id="Rechazadas" class="tabcontent">
+            <?php include './Estado/solicitudes_rechazadas.php'; ?>
+        </div>
         
-    </div>
+    </main>
+</div>
 
-    <script src="./js/message.js"></script>
+<script src="./js/message.js"></script>
+<script>
+function openTab(tabName, elmnt) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    elmnt.className += " active";
+
+    // Update URL with the active tab
+    var url = new URL(window.location.href);
+    url.searchParams.set('tab', tabName);
+    window.history.pushState({}, '', url);
+}
+
+// Show the tab based on URL parameter on page load
+document.addEventListener('DOMContentLoaded', function() {
+    var tabName = new URLSearchParams(window.location.search).get('tab');
+    if (!tabName) {
+        tabName = 'Pendientes'; // Default tab
+    }
+    document.querySelector(`button[onclick="openTab('${tabName}', this)"]`).click();
+});
+</script>
 
 </body>
 </html>

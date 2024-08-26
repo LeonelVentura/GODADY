@@ -47,24 +47,24 @@
                     <label for="email">Correo Institucional</label> 
                 </div>
                 <div class="input-wrapper">
-    <input type="tel" id="phone" name="phone" required><br><br>
-    <label for="phone">Teléfono móvil</label> 
-</div>
+                    <input type="tel" id="phone" name="phone" required><br><br>
+                    <label for="phone">Teléfono móvil</label> 
+                </div>
 
-<div class="input-wrapper">
-    <select id="activity" name="activity" required>
-        <option value="" disabled selected>Selecciona una actividad</option>
-        <?php include("../controlador/controlador_obtener_actividades.php"); ?>
-    </select>
-    <label for="activity">Actividad</label> 
-</div>
+                <div class="input-wrapper">
+                    <select id="activity" name="activity" required>
+                     <option value="" disabled selected>Seleccionar actividad</option>
+                     <?php include("../controlador/controlador_obtener_actividades.php"); ?>
+                    </select><br><br>
+                    <label for="activity">Actividad</label> 
+                </div>
 
-<div class="input-wrapper">                    
-    <textarea type="text" id="message" name="message"></textarea><br><br>
-    <label for="message">Mensaje (opcional)</label> 
-</div>
+                <div class="input-wrapper">                    
+                     <textarea type="text" id="message" name="message"></textarea><br><br>
+                     <label for="message">Mensaje (opcional)</label> 
+                </div>
 
-<input class="btn" type="submit" name="register" value="Enviar">
+                     <input class="btn" type="submit" name="register" value="Enviar">
             </form>
 
 
