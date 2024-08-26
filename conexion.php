@@ -1,4 +1,5 @@
 <?php
+
 // Configura los detalles de conexión a la base de datos
 $servername = "localhost";
 $username = "root";
@@ -28,8 +29,8 @@ $conexion = new mysqli($servername, $username, $password, $dbname);
 if ($conexion->connect_error) {
     die("Conexión fallida: " . $conexion->connect_error);
 }
-
 */
+
 
 //
 //cures_dev

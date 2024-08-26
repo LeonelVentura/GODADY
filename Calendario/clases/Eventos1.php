@@ -29,8 +29,8 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
                             evento,
                             DATE_FORMAT(hora_inicio, '%H:%i:%s') AS hora_inicio, 
                             DATE_FORMAT(hora_fin, '%H:%i:%s') AS hora_fin,
-                            estado,
-                            DATE_FORMAT(fecha, '%d-%m-%Y') AS fecha
+                            DATE_FORMAT(fecha, '%d-%m-%Y') AS fecha,
+                            est
                     FROM 
                         eventos";
                     
@@ -56,22 +56,35 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
             return mysqli_fetch_all($respuesta, MYSQLI_ASSOC);
         }
 
+        
         public function agregar($data) {
+            // Obtener la fecha actual
+            $fechaActual = date('Y-m-d'); 
+        
+            // Determinar el estado basado en la fecha
+            if ($data['fecha'] < $fechaActual) {
+                $estado = 'Realizado';
+            } elseif ($data['fecha'] == $fechaActual) {
+                $estado = 'En_Curso';
+            } else {
+                $estado = 'Organizando';
+            }
+        
             $sql = "INSERT INTO eventos (
-                                            evento,
-                                            hora_inicio,
-                                            hora_fin,
-                                            estado,
-                                            fecha) 
+                                        evento,
+                                        hora_inicio,
+                                        hora_fin,
+                                        fecha,
+                                        estado) 
                             VALUES (?, ?, ?, ?, ?)";
             $query = $this->conexion->prepare($sql);
             $query->bind_param('sssss',
-                                        $data['evento'],
-                                        $data['hora_inicio'],
-                                        $data['hora_fin'],
-                                        $data['estado'],
-                                        $data['fecha']);
-                                        
+                                $data['evento'],
+                                $data['hora_inicio'],
+                                $data['hora_fin'],
+                                $data['fecha'],
+                                $estado);
+                                
             return $query->execute();
         }
         public function eliminarEvento($id_evento) {
@@ -83,23 +96,36 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
         }
 
         public function actualizarEvento($data) {
-            
+            // Obtener la fecha actual
+            $fechaActual = date('Y-m-d'); 
+        
+            // Determinar el estado basado en la fecha
+            if ($data['fecha'] < $fechaActual) {
+                $estado = 'Realizado';
+            } elseif ($data['fecha'] == $fechaActual) {
+                $estado = 'En_Curso';
+            } else {
+                $estado = 'Organizando';
+            }
+        
             $sql = "UPDATE eventos SET evento = ?,
                                         hora_inicio = ?,
-                                        hora_fin = ?,
-                                        estado = ?, 
-                                        fecha = ? 
-                    WHERE id_evento = ?";
+                                        hora_fin = ?, 
+                                        fecha = ?,
+                                        estado = ?
+                        WHERE id_evento = ?";
             $query = $this->conexion->prepare($sql);
-            $query->bind_param('sssssi', $data['evento'],
-                                            $data['hora_inicio'],
-                                            $data['hora_fin'],
-                                            $data['estado'],
-                                            $data['fecha'],
-                                            $data['id_evento']);
-                                            
+            $query->bind_param('sssssi',
+                                $data['evento'],
+                                $data['hora_inicio'],
+                                $data['hora_fin'],
+                                $data['fecha'],
+                                $estado,
+                                $data['id_evento']);
+                                
             return $query->execute();
         }
+
 
         public function fullCalendar() {
             
@@ -118,4 +144,5 @@ $conexion = mysqli_connect("localhost", "root", "", "proyecto");
 
             return json_encode($eventos);
         }
+
     }
