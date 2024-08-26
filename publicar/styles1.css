@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: rgb(255, 135, 55);
+}
+
+.container {
+    text-align: center;
+    margin-top: 1px; /* Añadido para dar espacio a la barra de navegación */
+}
+
+h1 {
+    font-family: 'Lucida Console', Monaco, monospace; /* Tipografía del título */
+    font-size: 36px; /* Tamaño de la fuente */
+    color: #f56403ec; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    text-transform: uppercase; /* Transformar texto a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin: 20px 0; /* Margen superior e inferior */
+    padding: 10px; /* Relleno interior */
+    border-bottom: 2px solid #efa158; /* Línea inferior */
+    background-color: #ffe48b; /* Color de fondo */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+form {
+    background: #ffe48b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    position: static; /* Añadido para el fondo de formulario */
+    
+}
+
+label {
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 14px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 14px;
+    background: #ffa420;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background: #FFA500;
+}
+
+textarea {
+    resize: vertical;
+    height: 50px;
+}
+
+form::before {
+    content: "";
+    background: url('./uploads/UNFV.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3; /* Adjust the opacity here */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+#success-message {
+    display: none;
+    color: green;
+    margin-top: 20px;
+}

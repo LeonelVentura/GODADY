@@ -30,117 +30,16 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Eventos FIEI</title>
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    
-    <style>
-    body {
-    position: relative;
-    margin-top: 60px; /* Espacio para la barra de navegación fija */
-    background: url('./uploads/UNFV.jpg') no-repeat center center fixed;
-    background-size: cover;   
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8); /* Ajusta el color y la opacidad aquí */
-    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido del body */
-}
-
-.navbar {
-    width: 100%;
-    background-color: #333;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 2px 0; /* Reduce el padding para hacerla más delgada */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: flex-start; /* Alinea el contenido a la derecha */
-}
-
-.navbar a {
-    display: block;
-    color: #f2f2f2;
-    text-align: left;
-    padding: 5px 10px; /* Reduce el padding de los enlaces */
-    text-decoration: none;
-    font-size: 15px; /* Reduce el tamaño de fuente para hacerla más delgada */
-    font-weight: bold;
-}
-
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0; /* Elimina el padding del contenedor de la galería */
-    margin: 0; /* Elimina el margen del contenedor de la galería */
-}
-
-.photo {
-    margin: 100px; /* Reduce el margen entre las fotos */
-    border: 3px solid #efa158;
-    padding: 10px; /* Reduce el padding del contenedor de la foto */
-    width: calc(100% - 40px); /* Ajusta el ancho según el margen */
-    max-width: 510px; /* Ajusta el ancho máximo según tus necesidades */
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
-}
-
-.photo img {
-    width: 100%;
-    height: auto; /* Permite que la imagen mantenga su proporción */
-    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin recortes */
-}
-
-/*para el tamaño de las letras*/
-.photo h2 {
-    margin-top: 16px;
-    font-size: 24px;
-}
-
-.photo p {
-    margin-top: 12px;
-    font-size: 16px;
-}
-
-@media (max-width: 768px) {
-    .photo {
-        width: calc(50% - 40px); /* Dos fotos por fila en tablets y pantallas medianas */
-    }
-}
-
-@media (max-width: 480px) {
-    .photo {
-        width: calc(100% - 40px); /* Una foto por fila en pantallas pequeñas */
-    }
-}
-
-    </style>
 </head>
-<body>
 
+<body>
+<link rel="stylesheet" href="styles.css">
 <div class="navbar">
     <a href="../index.php">Home</a>
     <a href="../contacto_sugerencia/sugerencia.php">!Sugerir Evento!</a>
     <a href="../GestionVoluntarios/FormularioVoluntariado.php">
     ¿Quieres ser Voluntario?</a>
-</div>
-
-<div class="">
-    <link rel="stylesheet" href="styles.css">
+</div>  
 <h1>Actividades y Eventos</h1>
 </div>
 <div class="gallery">

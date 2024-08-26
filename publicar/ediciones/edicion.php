@@ -19,101 +19,8 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="styless1.css">
     <title>Ver Publicaciones</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-top: 50px; /* Ajusta el margen superior según sea necesario */
-            
-        }
-        table {
-            width: 80%;
-            margin: 20px auto;
-            border-collapse: collapse;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f0b20e;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        tr:hover {
-            background-color: #e9e9e9;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .action-buttons a {
-            padding: 10px 20px;
-            font-size: 14px;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-        }
-        .edit-button {
-            background-color: #64ea0d;
-        }
-        .delete-button {
-            background-color: #dc3545;
-        }
-
-        .navbar {
-            width: 100%;
-            background-color: #333;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .container {
-            text-align: center;
-            margin-top: 1px; /* Añadido para dar espacio a la barra de navegación */
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -124,7 +31,8 @@ $result = $conn->query($sql);
     <a href="../eventos.php">Ir a Eventos</a>
 </div>
 
-    <h1>Edición de Publicaciones</h1>
+<div class="">
+<h1>Edición de Publicaciones</h1>
     <table border="1">
         <tr>
             <th>Título</th>
@@ -132,6 +40,8 @@ $result = $conn->query($sql);
             <th>Fecha de Publicación</th>
             <th>Acciones</th>
         </tr>
+</div>
+
         <?php while ($row = $result->fetch_assoc()): ?>
         <tr id="publicacion-<?php echo $row['id_publicaciones']; ?>">
             <td><?php echo $row['titulo']; ?></td>
